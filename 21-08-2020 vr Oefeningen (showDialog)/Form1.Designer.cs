@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbRekeningen = new System.Windows.Forms.ListBox();
             this.btnNieuwRekening = new System.Windows.Forms.Button();
             this.btnOverschrijven = new System.Windows.Forms.Button();
+            this.lRekeningNaam = new System.Windows.Forms.Label();
+            this.btnVerwijderen = new System.Windows.Forms.Button();
+            this.lRekeningSaldo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbRekeningen
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(54, 46);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 164);
-            this.listBox1.TabIndex = 0;
+            this.lbRekeningen.FormattingEnabled = true;
+            this.lbRekeningen.ItemHeight = 20;
+            this.lbRekeningen.Location = new System.Drawing.Point(29, 46);
+            this.lbRekeningen.Name = "lbRekeningen";
+            this.lbRekeningen.Size = new System.Drawing.Size(203, 264);
+            this.lbRekeningen.TabIndex = 0;
+            this.lbRekeningen.SelectedIndexChanged += new System.EventHandler(this.lbRekeningen_SelectedIndexChanged);
             // 
             // btnNieuwRekening
             // 
@@ -50,6 +54,7 @@
             this.btnNieuwRekening.TabIndex = 1;
             this.btnNieuwRekening.Text = "Nieuwe rekening openen";
             this.btnNieuwRekening.UseVisualStyleBackColor = true;
+            this.btnNieuwRekening.Click += new System.EventHandler(this.btnNieuwRekening_Click);
             // 
             // btnOverschrijven
             // 
@@ -59,27 +64,64 @@
             this.btnOverschrijven.TabIndex = 2;
             this.btnOverschrijven.Text = "Overschrijven";
             this.btnOverschrijven.UseVisualStyleBackColor = true;
+            this.btnOverschrijven.Click += new System.EventHandler(this.btnOverschrijven_Click);
+            // 
+            // lRekeningNaam
+            // 
+            this.lRekeningNaam.AutoSize = true;
+            this.lRekeningNaam.Location = new System.Drawing.Point(25, 355);
+            this.lRekeningNaam.Name = "lRekeningNaam";
+            this.lRekeningNaam.Size = new System.Drawing.Size(89, 20);
+            this.lRekeningNaam.TabIndex = 3;
+            this.lRekeningNaam.Text = "naam kaart";
+            // 
+            // btnVerwijderen
+            // 
+            this.btnVerwijderen.Location = new System.Drawing.Point(238, 253);
+            this.btnVerwijderen.Name = "btnVerwijderen";
+            this.btnVerwijderen.Size = new System.Drawing.Size(147, 57);
+            this.btnVerwijderen.TabIndex = 4;
+            this.btnVerwijderen.Text = "Verwijderen";
+            this.btnVerwijderen.UseVisualStyleBackColor = true;
+            this.btnVerwijderen.Click += new System.EventHandler(this.btnVerwijderen_Click);
+            // 
+            // lRekeningSaldo
+            // 
+            this.lRekeningSaldo.AutoSize = true;
+            this.lRekeningSaldo.Location = new System.Drawing.Point(234, 355);
+            this.lRekeningSaldo.Name = "lRekeningSaldo";
+            this.lRekeningSaldo.Size = new System.Drawing.Size(47, 20);
+            this.lRekeningSaldo.TabIndex = 5;
+            this.lRekeningSaldo.Text = "saldo";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(653, 520);
+            this.Controls.Add(this.lRekeningSaldo);
+            this.Controls.Add(this.btnVerwijderen);
+            this.Controls.Add(this.lRekeningNaam);
             this.Controls.Add(this.btnOverschrijven);
             this.Controls.Add(this.btnNieuwRekening);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbRekeningen);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbRekeningen;
         private System.Windows.Forms.Button btnNieuwRekening;
         private System.Windows.Forms.Button btnOverschrijven;
+        private System.Windows.Forms.Label lRekeningNaam;
+        private System.Windows.Forms.Button btnVerwijderen;
+        private System.Windows.Forms.Label lRekeningSaldo;
     }
 }
 
